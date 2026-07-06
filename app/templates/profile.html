@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Profile - LeetCode Analytics{% endblock %}
+{% block content %}
+<h1>Profile</h1>
+
+<div class="grid-2">
+  <div class="card">
+    <h3>LeetCode Integration</h3>
+    <form method="post">
+      <label>LeetCode Username</label>
+      <input
+        type="text"
+        name="leetcode_username"
+        value="{{ lc_profile.leetcode_username if lc_profile else '' }}"
+        required
+      />
+      <button class="btn primary" type="submit">Sync Profile</button>
+    </form>
+  </div>
+
+  {% if lc_profile %}
+  <div class="card">
+    <h3>Current Stats</h3>
+    <p><strong>Username:</strong> {{ lc_profile.leetcode_username }}</p>
+    <p><strong>Total Solved:</strong> {{ lc_profile.total_solved }}</p>
+    <p>
+      <strong>Contest Rating:</strong>
+      {{ "%.1f"|format(lc_profile.contest_rating) }}
+    </p>
+    <p>
+      <strong>Last Synced:</strong>
+      {{ lc_profile.last_synced_at or 'Never' }}
+    </p>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

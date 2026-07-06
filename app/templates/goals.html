@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Goals - LeetCode Analytics{% endblock %}
+{% block content %}
+<h1>Goals</h1>
+
+<div class="grid-2">
+  <div class="card">
+    <h3>Create Goal</h3>
+    <form method="post">
+      <label>Goal Type</label>
+      <select name="goal_type" required>
+        <option value="total_solved">Total Problems Solved</option>
+        <option value="easy_solved">Easy Problems</option>
+        <option value="medium_solved">Medium Problems</option>
+        <option value="hard_solved">Hard Problems</option>
+        <option value="contest_rating">Contest Rating</option>
+      </select>
+
+      <label>Target Value</label>
+      <input type="number" name="target_value" min="1" required />
+
+      <label>Description (optional)</label>
+      <input type="text" name="description" />
+
+      <button class="btn primary" type="submit">Create Goal</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h3>Your Goals</h3>
+    {% if goals %}
+    <ul class="goals-list">
+      {% for g in goals %}
+      <li>
+        <div class="goal-header">
+          <span>{{ g.description or g.goal_type }} ({{ g.status }})</span>
+          <span>{{ g.current_value }}/{{ g.target_value }}</span>
+        </div>
+        <div class="progress-bar">
+          <div
+            class="progress-bar-fill"
+            style="width: {{ g.progress_percent() }}%;"
+          ></div>
+        </div>
+        {% if g.status == 'active' %}
+        <form
+          method="post"
+          action="{{ url_for('goals.complete_goal', goal_id=g.id) }}"
+        >
+          <button class="btn small" type="submit">Mark Completed</button>
+        </form>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No goals yet.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

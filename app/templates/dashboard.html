@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - LeetCode Analytics{% endblock %}
+{% block content %}
+<h1>Dashboard</h1>
+
+{% if not lc_profile %}
+<div class="card">
+  <p>Connect your LeetCode profile to see analytics.</p>
+  <a class="btn primary" href="{{ url_for('profile.profile_index') }}">
+    Connect Profile
+  </a>
+</div>
+{% else %}
+<div class="cards-grid">
+  <div class="card metric-card">
+    <h3>Total Solved</h3>
+    <p class="metric-value">{{ stats.total_solved }}</p>
+  </div>
+  <div class="card metric-card">
+    <h3>Easy</h3>
+    <p class="metric-value">{{ stats.easy_solved }}</p>
+  </div>
+  <div class="card metric-card">
+    <h3>Medium</h3>
+    <p class="metric-value">{{ stats.medium_solved }}</p>
+  </div>
+  <div class="card metric-card">
+    <h3>Hard</h3>
+    <p class="metric-value">{{ stats.hard_solved }}</p>
+  </div>
+  <div class="card metric-card">
+    <h3>Contest Rating</h3>
+    <p class="metric-value">{{ "%.1f"|format(stats.contest_rating) }}</p>
+  </div>
+  <div class="card metric-card">
+    <h3>Acceptance Rate</h3>
+    <p class="metric-value">{{ "%.1f"|format(stats.acceptance_rate) }}%</p>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <h3>Difficulty Distribution</h3>
+    <canvas id="difficultyChart"></canvas>
+  </div>
+  <div class="card">
+    <h3>Monthly Activity</h3>
+    <canvas id="activityChart"></canvas>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <h3>Recent Submissions</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Problem</th>
+          <th>Status</th>
+          <th>Language</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in recent_submissions %}
+        <tr>
+          <td>{{ s.title }}</td>
+          <td>{{ s.status }}</td>
+          <td>{{ s.language }}</td>
+          <td>{{ s.timestamp }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Active Goals</h3>
+    {% if active_goals %}
+    <ul class="goals-list">
+      {% for g in active_goals %}
+      <li>
+        <div class="goal-header">
+          <span>{{ g.description or g.goal_type }}</span>
+          <span>{{ g.current_value }}/{{ g.target_value }}</span>
+        </div>
+        <div class="progress-bar">
+          <div
+            class="progress-bar-fill"
+            style="width: {{ g.progress_percent() }}%;"
+          ></div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No active goals. Create one to start tracking.</p>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

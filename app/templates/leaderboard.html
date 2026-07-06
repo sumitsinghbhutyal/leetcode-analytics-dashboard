@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Leaderboard - LeetCode Analytics{% endblock %}
+{% block content %}
+<h1>Friends Leaderboard</h1>
+
+<div class="grid-2">
+  <div class="card">
+    <h3>Add Friend</h3>
+    <form method="post">
+      <label>Friend Username or Email</label>
+      <input type="text" name="identifier" required />
+      <button class="btn primary" type="submit">Add</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h3>Leaderboard</h3>
+    <div class="leaderboard-controls">
+      <span>Sort by:</span>
+      <a
+        href="{{ url_for('leaderboard.leaderboard_index', sort_by='total_solved') }}"
+        class="{% if sort_by=='total_solved' %}active{% endif %}"
+        >Total Solved</a
+      >
+      <a
+        href="{{ url_for('leaderboard.leaderboard_index', sort_by='contest_rating') }}"
+        class="{% if sort_by=='contest_rating' %}active{% endif %}"
+        >Contest Rating</a
+      >
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Friend</th>
+          <th>Total Solved</th>
+          <th>Contest Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user, profile in profiles %}
+        <tr>
+          <td>{{ user.username }}</td>
+          <td>{{ profile.total_solved if profile else '-' }}</td>
+          <td>
+            {% if profile %}
+            {{ "%.1f"|format(profile.contest_rating) }}
+            {% else %}
+            -
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

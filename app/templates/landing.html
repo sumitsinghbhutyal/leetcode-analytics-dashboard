@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}LeetCode Analytics - Welcome{% endblock %}
+{% block content %}
+<section class="landing">
+  <div class="hero">
+    <h1>LeetCode Analytics Dashboard</h1>
+    <p>Track your coding journey with beautiful analytics and insights.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ url_for('auth.register') }}">Get Started</a>
+      <a class="btn secondary" href="{{ url_for('auth.login') }}">Log In</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

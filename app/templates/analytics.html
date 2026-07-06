@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Analytics - LeetCode Analytics{% endblock %}
+{% block content %}
+<h1>Analytics</h1>
+
+{% if not lc_profile %}
+<p>Connect your LeetCode profile to view analytics.</p>
+{% else %}
+<div class="grid-2">
+  <div class="card">
+    <h3>Contest Rating History</h3>
+    <canvas id="contestChart"></canvas>
+  </div>
+  <div class="card">
+    <h3>Monthly Problems Solved</h3>
+    <canvas id="activityChartAnalytics"></canvas>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+{% endblock %}
