@@ -29,5 +29,5 @@ class Config:
     SESSION_COOKIE_SECURE = os.environ.get("SESSION_COOKIE_SECURE", "0") == "1"
     REMEMBER_COOKIE_SECURE = SESSION_COOKIE_SECURE
 
-    LEETCODE_BASE_URL = "[leetcode.com](https://leetcode.com)"
-    LEETCODE_GRAPHQL_URL = "[leetcode.com](https://leetcode.com/graphql)"  # used by service layer
+    LEETCODE_BASE_URL = "https://leetcode.com"
+    LEETCODE_GRAPHQL_URL = "https://leetcode.com/graphql"
