@@ -70,7 +70,7 @@ leetcode-analytics-dashboard/
 │   ├── services/
 │   ├── templates/
 │   └── static/
-│
+├── assets/
 ├── database/
 ├── tests/
 ├── requirements.txt
