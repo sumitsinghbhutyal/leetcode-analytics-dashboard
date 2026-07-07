@@ -1,8 +1,17 @@
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
-  margin: 0;
+body{
+    font-family: Inter, system-ui, sans-serif;
+
+    margin:0;
+
+    color:#F8FAFC;
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(139,92,246,.18), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(236,72,153,.12), transparent 20%),
+        radial-gradient(circle at 80% 90%, rgba(6,182,212,.12), transparent 20%),
+        #09090B;
+
+    min-height:100vh;
 }
 
 .app-container {
@@ -10,12 +19,18 @@ body {
   min-height: 100vh;
 }
 
-.sidebar {
-  width: 240px;
-  background: #020617;
-  padding: 1.5rem 1rem;
-  display: flex;
-  flex-direction: column;
+.sidebar{
+
+    width:280px;
+
+    padding:30px;
+
+    background:rgba(15,15,20,.75);
+
+    backdrop-filter:blur(25px);
+
+    border-right:1px solid rgba(255,255,255,.06);
+
 }
 
 .sidebar-header {
@@ -54,9 +69,14 @@ body {
   color: #9ca3af;
 }
 
-.main-content {
-  flex: 1;
-  padding: 1.5rem 2rem;
+.main-content{
+
+flex:1;
+
+padding:40px;
+
+overflow:auto;
+
 }
 
 h1 {
@@ -64,13 +84,35 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.card {
-  background: #020617;
-  border-radius: 0.75rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid #1f2937;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
-  margin-bottom: 1rem;
+.card{
+
+background:rgba(22,22,26,.72);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+padding:24px;
+
+box-shadow:
+
+0 10px 40px rgba(0,0,0,.35);
+
+transition:.35s;
+
+}
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.45);
+
+border-color:#8B5CF6;
+
 }
 
 .cards-grid {
@@ -80,16 +122,63 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.metric-card h3 {
-  font-size: 0.9rem;
-  color: #9ca3af;
+.metric-card h3{
+
+font-size:13px;
+
+font-weight:600;
+
+color:#94A3B8;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
 }
 
-.metric-value {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-top: 0.25rem;
-  color: #e5e7eb;
+.metric-value{
+
+font-size:42px;
+
+font-weight:800;
+
+letter-spacing:-1px;
+
+}
+.metric-card.easy{
+
+border-top:4px solid #22C55E;
+
+}
+
+.metric-card.medium{
+
+border-top:4px solid #F59E0B;
+
+}
+
+.metric-card.hard{
+
+border-top:4px solid #EF4444;
+
+}
+
+.metric-card.rating{
+
+border-top:4px solid #8B5CF6;
+
+}
+
+.metric-card.acceptance{
+
+border-top:4px solid #06B6D4;
+
+}
+
+.metric-card.total{
+
+border-top:4px solid #3B82F6;
+
 }
 
 .grid-2 {
@@ -115,6 +204,17 @@ h1 {
   color: #9ca3af;
   text-align: left;
 }
+.table tr{
+
+transition:.2s;
+
+}
+
+.table tr:hover{
+
+background:rgba(255,255,255,.04);
+
+}
 
 .btn {
   display: inline-flex;
@@ -128,13 +228,29 @@ h1 {
   text-decoration: none;
 }
 
-.btn.primary {
-  background: #6366f1;
-  color: white;
+.btn.primary{
+
+background:
+linear-gradient(
+135deg,
+#7C3AED,
+#EC4899
+);
+
+border:none;
+
+box-shadow:
+0 10px 30px rgba(124,58,237,.35);
+
 }
 
-.btn.primary:hover {
-  background: #4f46e5;
+.btn.primary:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 15px 40px rgba(236,72,153,.35);
+
 }
 
 .btn.secondary {
@@ -216,12 +332,43 @@ label {
   margin-bottom: 0.25rem;
 }
 
-.progress-bar {
-  width: 100%;
-  height: 6px;
-  background: #111827;
-  border-radius: 999px;
-  overflow: hidden;
+.progress-bar{
+
+height:10px;
+
+background:#27272A;
+
+}
+
+.progress-bar-fill{
+
+background:
+
+linear-gradient(
+90deg,
+#8B5CF6,
+#EC4899
+);
+
+}
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#3F3F46;
+
+border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#8B5CF6;
+
 }
 
 .progress-bar-fill {
@@ -271,4 +418,171 @@ label {
   .main-content {
     padding: 1rem;
   }
+}
+/* ============================= */
+/* Sidebar Branding */
+/* ============================= */
+
+.sidebar{
+    width:270px;
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo i {
+  font-size: 32px;
+  color: #6366f2;
+}
+
+.logo-text h2 {
+  margin: 0;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif; /* Change font here */
+}
+
+    .logo-text span {
+      font-size: 12px;
+      color: #94a3b8;
+      font-family: 'Roboto', sans-serif; /* Change font here */
+    }
+
+/* Navigation */
+
+.sidebar-nav{
+    display:flex;
+    flex-direction:column;
+    margin-top:40px;
+    gap:8px;
+}
+
+.sidebar-nav a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    color:#cbd5e1;
+    text-decoration:none;
+
+    transition:.25s ease;
+}
+
+.sidebar-nav a i{
+    width:20px;
+    text-align:center;
+    color:#94a3b8;
+}
+
+.sidebar-nav a:hover{
+
+background:
+
+linear-gradient(
+90deg,
+rgba(124,58,237,.22),
+rgba(236,72,153,.15)
+);
+
+}
+
+.sidebar-nav a:hover i{
+    color:#818cf8;
+}
+
+.sidebar-nav a.active{
+
+background:
+
+linear-gradient(
+90deg,
+rgba(124,58,237,.25),
+rgba(236,72,153,.15)
+);
+
+border-left:4px solid #8B5CF6;
+
+}
+
+.sidebar-nav a.active i{
+    color:#6366f1;
+}
+
+/* Footer */
+
+.sidebar-footer{
+    margin-top:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#cbd5e1;
+
+    font-weight:500;
+}
+
+.sidebar-footer i{
+    font-size:26px;
+    color:#6366f1;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+}
+/* ============================= */
+/* Graph Bar Styling */
+/* ============================= */
+
+.graph {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  height: 300px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.graph-bar {
+  flex: 1;
+  border-radius: 8px 8px 0 0;
+  transition: 0.3s ease;
+}
+
+/* Example shaded gradients for each fruit */
+.graph-bar.kiwi {
+  background: linear-gradient(to top, #22c55e, #a3e635);
+}
+
+.graph-bar.apple {
+  background: linear-gradient(to top, #ef4444, #f87171);
+}
+
+.graph-bar.orange {
+  background: linear-gradient(to top, #f59e0b, #fbbf24);
+}
+
+.graph-bar.grape {
+  background: linear-gradient(to top, #8b5cf6, #a78bfa);
+}
+
+.graph-bar.banana {
+  background: linear-gradient(to top, #facc15, #fde047);
+}
+
+/* Hover effect for interactivity */
+.graph-bar:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
 }

@@ -1,60 +1,142 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>{% block title %}LeetCode Analytics{% endblock %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <title>{% block title %}LeetCode Analytics{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-  />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    rel="stylesheet"
-    href="{{ url_for('static', filename='css/main.css') }}"
-  />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/main.css') }}"
+    >
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-  <div class="app-container">
-    {% if current_user.is_authenticated %}
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" />
-        <span>LC Analytics</span>
-      </div>
-      <nav class="sidebar-nav">
-        <a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a>
-        <a href="{{ url_for('dashboard.analytics') }}">Analytics</a>
-        <a href="{{ url_for('goals.goals_index') }}">Goals</a>
-        <a href="{{ url_for('leaderboard.leaderboard_index') }}">Leaderboard</a>
-        <a href="{{ url_for('profile.profile_index') }}">Profile</a>
-        <a href="{{ url_for('auth.logout') }}">Logout</a>
-      </nav>
-      <div class="sidebar-footer">
+
+<div class="app-container">
+
+{% if current_user.is_authenticated %}
+
+<aside class="sidebar">
+
+    <!-- Logo -->
+
+    <div class="sidebar-header">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-code"></i>
+
+            <div class="logo-text">
+                <h2>LeetCode Analytics</h2>
+                <span>Track Your Coding Journey</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="sidebar-nav">
+
+        <a href="{{ url_for('dashboard.dashboard') }}"
+           class="{% if request.endpoint == 'dashboard.dashboard' %}active{% endif %}">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="{{ url_for('dashboard.analytics') }}"
+           class="{% if request.endpoint == 'dashboard.analytics' %}active{% endif %}">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Analytics</span>
+        </a>
+
+        <a href="{{ url_for('goals.goals_index') }}"
+           class="{% if request.endpoint == 'goals.goals_index' %}active{% endif %}">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>Goals</span>
+        </a>
+
+        <a href="{{ url_for('leaderboard.leaderboard_index') }}"
+           class="{% if request.endpoint == 'leaderboard.leaderboard_index' %}active{% endif %}">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Leaderboard</span>
+        </a>
+
+        <a href="{{ url_for('profile.profile_index') }}"
+           class="{% if request.endpoint == 'profile.profile_index' %}active{% endif %}">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+
+        <a href="{{ url_for('auth.logout') }}">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+
+    </nav>
+
+
+    <!-- User -->
+
+    <div class="sidebar-footer">
+
+        <i class="fa-solid fa-circle-user"></i>
+
         <span>{{ current_user.username }}</span>
-      </div>
-    </aside>
-    {% endif %}
 
-    <main class="main-content">
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-      <div class="flash-container">
-        {% for category, message in messages %}
-        <div class="flash flash-{{ category }}">{{ message }}</div>
-        {% endfor %}
-      </div>
-      {% endif %}
-      {% endwith %}
+    </div>
 
-      {% block content %}{% endblock %}
-    </main>
-  </div>
+</aside>
 
-  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-  {% block scripts %}{% endblock %}
+{% endif %}
+
+<main class="main-content">
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+<div class="flash-container">
+
+{% for category, message in messages %}
+<div class="flash flash-{{ category }}">
+{{ message }}
+</div>
+{% endfor %}
+
+</div>
+
+{% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+</main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% block scripts %}{% endblock %}
+
 </body>
 </html>
