@@ -12,7 +12,7 @@ A modern full-stack web application that helps users track, analyze, and visuali
   <img src="assets/dashboard1.png" width="900">
 </p>
 
-The main dashboard provides an overview of coding statistics, problem distribution, monthly activity, recent submissions, and active goals.
+The main dashboard provides an overview of coding statistics, problem distribution and monthly activity.
 
 ---
 
@@ -22,7 +22,7 @@ The main dashboard provides an overview of coding statistics, problem distributi
   <img src="assets/dashboard2.png" width="900">
 </p>
 
-The analytics page offers deeper insights into problem-solving trends, topic-wise progress, contest performance, and coding consistency.
+The analytics page offers deeper insights into problem-solving trends, recent submissions, and active goals.
 
 ## ✨ Features
 
