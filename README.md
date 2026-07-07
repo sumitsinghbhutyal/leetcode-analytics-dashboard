@@ -31,7 +31,7 @@ The analytics page offers deeper insights into problem-solving trends, recent su
 - 📈 Monthly activity visualization using Chart.js
 - 🍩 Difficulty distribution chart
 - 🎯 Goal tracking system
-- 🏆 Leaderboard
+- 🏆 Contest rating
 - 👤 User profile management
 - 📱 Responsive interface
 - 🌙 Modern dark-themed UI
