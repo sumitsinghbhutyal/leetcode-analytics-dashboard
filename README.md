@@ -8,7 +8,8 @@ A modern full-stack web application that helps users track, analyze, and visuali
 
 > *(Add a screenshot of your dashboard here after finalizing the UI.)*
 
-![Dashboard Preview](assets/dashboard.png)
+![Dashboard Preview](assets/dashboard1.png)
+![Dashboard Preview](assets/dashboard2.png)
 
 ---
 
@@ -73,7 +74,7 @@ leetcode-analytics-dashboard/
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/leetcode-analytics-dashboard.git
+git clone https://github.com/sumitsinghbhutyal/leetcode-analytics-dashboard.git
 ```
 
 Move into the project
