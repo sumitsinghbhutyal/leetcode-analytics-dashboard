@@ -6,10 +6,10 @@ A modern full-stack web application that helps users track, analyze, and visuali
 
 ## 📸 Preview
 
-> *(Add a screenshot of your dashboard here after finalizing the UI.)*
-
-![Dashboard Preview](assets/dashboard1.png)
-![Dashboard Preview](assets/dashboard2.png)
+<p align="center">
+    <img src="assets/dashboard1.png" width="48%">
+    <img src="assets/dashboard2.png" width="48%">
+</p>
 
 ---
 
