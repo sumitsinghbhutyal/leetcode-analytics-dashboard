@@ -4,14 +4,25 @@ A modern full-stack web application that helps users track, analyze, and visuali
 
 ---
 
-## 📸 Preview
+## 📸 Application Screenshots
+
+### Dashboard
 
 <p align="center">
-    <img src="assets/dashboard1.png" width="48%">
-    <img src="assets/dashboard2.png" width="48%">
+  <img src="assets/dashboard1.png" width="900">
 </p>
 
+The main dashboard provides an overview of coding statistics, problem distribution, monthly activity, recent submissions, and active goals.
+
 ---
+
+### Analytics
+
+<p align="center">
+  <img src="assets/dashboard2.png" width="900">
+</p>
+
+The analytics page offers deeper insights into problem-solving trends, topic-wise progress, contest performance, and coding consistency.
 
 ## ✨ Features
 
