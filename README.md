@@ -1,10 +1,10 @@
-# 🚀 LeetCode Analytics Dashboard
+#  LeetCode Analytics Dashboard
 
 A modern full-stack web application that helps users track, analyze, and visualize their LeetCode progress through an interactive dashboard.
 
 ---
 
-## 📸 Application Screenshots
+##  Application Screenshots
 
 ### Dashboard
 
@@ -24,21 +24,21 @@ The main dashboard provides an overview of coding statistics, problem distributi
 
 The analytics page offers deeper insights into problem-solving trends, recent submissions, and active goals.
 
-## ✨ Features
+##  Features
 
-- 🔐 Secure user authentication (Login & Registration)
-- 📊 Interactive dashboard with coding statistics
-- 📈 Monthly activity visualization using Chart.js
-- 🍩 Difficulty distribution chart
-- 🎯 Goal tracking system
-- 🏆 Contest rating
-- 👤 User profile management
-- 📱 Responsive interface
-- 🌙 Modern dark-themed UI
+-  Secure user authentication (Login & Registration)
+-  Interactive dashboard with coding statistics
+-  Monthly activity visualization using Chart.js
+-  Difficulty distribution chart
+-  Goal tracking system
+-  Contest rating
+-  User profile management
+-  Responsive interface
+-  Modern dark-themed UI
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Backend
 - Python
@@ -59,7 +59,7 @@ The analytics page offers deeper insights into problem-solving trends, recent su
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 leetcode-analytics-dashboard/
@@ -80,7 +80,7 @@ leetcode-analytics-dashboard/
 
 ---
 
-## 🚀 Installation
+##  Installation
 
 Clone the repository
 
@@ -128,18 +128,18 @@ python run.py
 
 ---
 
-## 📊 Future Improvements
+##  Future Improvements
 
-- 🔥 GitHub-style contribution heatmap
-- 🤖 AI-powered coding insights
-- 📅 Daily coding streak tracker
-- 🏅 Achievement badges
-- 📈 Contest rating history
-- 📚 Topic-wise progress analytics
-- 🌐 Live deployment
+-  GitHub-style contribution heatmap
+-  AI-powered coding insights
+-  Daily coding streak tracker
+-  Achievement badges
+-  Contest rating history
+-  Topic-wise progress analytics
+-  Live deployment
 
 ---
 
-## 📄 License
+##  License
 
 This project is developed for educational and portfolio purposes.
